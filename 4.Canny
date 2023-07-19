@@ -1,0 +1,11 @@
+import cv2
+image = cv2.imread("C:\\Users\\Vaishnavi\\Desktop\\depositphotos_63506525-stock-illustration-landscape-background-with-tree-silhouette.jpg")
+blurred_image = cv2.GaussianBlur(image, (5, 5), 0)
+edges = cv2.Canny(blurred_image, 100, 200)
+laplacian = cv2.Laplacian(image, cv2.CV_64F)
+cv2.imshow('Original Image', image)
+cv2.imshow('Blurred Image', blurred_image)
+cv2.imshow('Edges', edges)
+cv2.imshow('Laplacian', laplacian)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
