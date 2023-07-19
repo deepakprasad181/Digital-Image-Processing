@@ -1,0 +1,16 @@
+import cv2
+img = cv2.imread("C:\\Users\\DEEPAK PRASAD\\OneDrive\\Desktop\\11.jpg")
+height,width=img.shape[:2]
+half_width = width // 2
+half_height = height // 2
+top_left = img[0:half_height, 0:half_width]
+top_right = img[0:half_height, half_width:width]
+bottom_left = img[half_height:height, 0:half_width]
+bottom_right = img[half_height:height, half_width:width]
+cv2.imshow('Top Left', top_left)
+cv2.imshow('Top Right', top_right) 
+cv2.imshow('Bottom Left', bottom_left) 
+cv2.imshow('Bottom Right', bottom_right) 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
