@@ -1,0 +1,15 @@
+import numpy as np
+img = cv2.imread("C:\\Users\\Vaishnavi\\Desktop\\download.png")
+angle = 60
+scale = 1.5
+tx, ty = 50, -30
+h, w = img.shape[:2]
+M_rotate = cv2.getRotationMatrix2D((w//2, h//2), angle, scale)
+M_translate = np.float32([[1, 0, tx], [0, 1, ty]])
+img_rotated = cv2.warpAffine(img, M_rotate, (w, h))
+img_transformed = cv2.warpAffine(img, M_translate, (w, h))
+cv2.imshow('Original', img)
+cv2.imshow('Rotated', img_rotated)
+cv2.imshow('Transformed', img_transformed)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
