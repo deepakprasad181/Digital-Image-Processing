@@ -1,0 +1,11 @@
+import cv2
+import numpy as np
+image = cv2.imread(" ", 0)  # Read as grayscale
+clahe = cv2.createCLAHE(clipLimit=2.0)  # Create a CLAHE object
+enhanced_image = clahe.apply(image)
+_, segmented_image = cv2.threshold(enhanced_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+cv2.imshow('Original Image', image)
+cv2.imshow('Enhanced Image', enhanced_image)
+cv2.imshow('Segmented Image', segmented_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
