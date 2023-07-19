@@ -1,5 +1,5 @@
 import cv2
-img = cv2.imread("C:\\Users\\DEEPAK PRASAD\\OneDrive\\Desktop\\11.jpg")
+img = cv2.imread("  ")
 height,width=img.shape[:2]
 half_width = width // 2
 half_height = height // 2
